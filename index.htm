@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ZBAR</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+	<script type="text/javascript">
+		$("#main").live('pageshow', function(){		
+			setFocus();
+		});
+	</script>	
+	<script>
+		function setFocus(){
+			var plant = $("#plant").val();
+			var mat = $("#material").val();			
+			if(plant==""){
+				$("#plant").focus();
+			}
+			else{
+				$("#material").focus();
+			}				
+		}						
+	</script>
+</head>
+<body>
+<div data-role="page" id="main">
+	
+	<div data-role="header" data-theme="b">
+		<h1>ZBAR</h1>
+	</div><!-- /header -->
+	
+	<div data-role="content">		
+		<div data-role="collapsible" data-collapsed="true">
+			<h3>Change Default Param.</h3>
+			<div data-role="fieldcontain">
+				<label for="sarea">Supply Area</label>
+				<input type="text" id="sarea" name="sarea"/>
+				<label for="qty">Quantity</label>
+				<input type="number" id="qty" name="qty"/>					
+			</div>
+		</div>
+		<div data-role="fieldcontain">
+			<label for="plant">Plant</label>
+			<input type="text" id="plant" name="plant" value="1190"/>
+			<label for="material">Material No.</label>
+			<input type="text" id="material" name="material"/>
+			<label for="multi">PO Multiple Lines Items</label>
+			<input type="checkbox" id="multi" name="multi"/>			
+		</div>
+		<div data-role="collapsible" data-collapsed="false">
+			<h3>12345678 - Test Material 1</h3>
+			<!--<div data-role="fieldcontain">-->
+				<table>
+				<tr>
+					<td><label for="12345678_plant">Plant</label></td>
+					<td><input type="text" id="12345678_plant" name="12345678_plant" value="1190" disabled="disabled" data-role="none"/></td>
+				</tr>
+				<tr>
+					<td><label for="12345678_sarea">Supply Area</label></td>
+					<td><input type="text" id="12345678_sarea" name="12345678_sarea" value="DCC" disabled="disabled" data-role="none"/></td>
+				</tr>
+				<tr>
+					<td><label for="12345678_qty">Quantity</label></td>
+					<td><input type="text" id="12345678_qty" name="12345678_qty" value="100" disabled="disabled" data-role="none"/></td>
+				</tr>
+				<tr>
+					<td><label for="12345678_vendor">Vendor Desc.</label></td>
+					<td><input type="text" id="12345678_vendor" name="12345678_vendor" value="Leica Microsystems" disabled="disabled" data-role="none"/></td>
+				</tr>				
+				</table>									
+			<!--</div>-->
+		</div>
+		<div data-role="collapsible" data-collapsed="false">
+			<h3>123456789 - Test Material 2</h3>
+			<table>
+				<tr>
+					<td><label for="123456789_plant">Plant</label></td>
+					<td><input type="text" id="123456789_plant" name="123456789_plant" value="1190" data-role="none"/></td>
+				</tr>
+				<tr>
+					<td><label for="123456789_sarea">Supply Area</label></td>
+					<td><input type="text" id="123456789_sarea" name="123456789_sarea" value="DCC" data-role="none"/></td>
+				</tr>
+				<tr>
+					<td><label for="123456789_qty">Quantity</label></td>
+					<td><input type="text" id="123456789_qty" name="123456789_qty" value="100" disabled="disabled" data-role="none"/></td>
+				</tr>
+				<tr>
+					<td><label for="123456789_vendor">Vendor Desc.</label></td>
+					<td><input type="text" id="123456789_vendor" name="123456789_vendor" value="Leica Microsystems" disabled="disabled" data-role="none"/></td>
+				</tr>				
+			</table>									
+		</div>	
+		<div class="ui-body ui-body-b">
+		<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><button type="submit" data-theme="d">Cancel</button></div>
+				<div class="ui-block-b"><button type="submit" data-theme="a">Save</button></div>
+	    </fieldset>
+		</div>
+	</div><!-- /content -->	
+	
+	<div data-role="footer" data-theme="b">
+		<h4>Footer</h4>
+	</div><!-- /footer -->
+	
+</div><!-- /main Page -->
+</body>
+</html>
